@@ -27,7 +27,7 @@ async def cancel(event):
 async def start(event):
   await event.reply("**SuperTagger Bot**, Grup veya kanaldaki neredeyse tüm üyelerden bahsedebilirim ★\nDaha fazla bilgi için **/help**'i tıklayın.",
                     buttons=(
-                      [Button.url('🌟 Beni Bir Gruba Ekle', 'https://t.me/loungetaggerbot?startgroup=a'),
+                      [Button.url('🌟 Beni Bir Gruba Ekle', 'https://t.me/supertaggerbot?startgroup=a'),
                       Button.url('📣 Support', 'https://t.me/Sohbeteam11'),
                       Button.url('🚀 Sahibim', 'https://t.me/hasanli011')]
                     ),
@@ -38,7 +38,7 @@ async def help(event):
   helptext = "**Supertagger bot'un Yardım Menüsü**\n\nKomut: /all \n  Bu komutu, başkalarına bahsetmek istediğiniz metinle birlikte kullanabilirsiniz. \n`Örnek: /all Günaydın!`  \nBu komutu yanıt olarak kullanabilirsiniz. herhangi bir mesaj Bot, yanıtlanan iletiye kullanıcıları etiketleyecek"
   await event.reply(helptext,
                     buttons=(
-                      [Button.url('🌟 Beni Bir Gruba Ekle', 'https://t.me/loungetaggerbot?startgroup=a'),
+                      [Button.url('🌟 Beni Bir Gruba Ekle', 'https://t.me/supertaggerbot?startgroup=a'),
                        Button.url('📣 Support', 'https://t.me/Sohbetteam11'),
                       Button.url('🚀 Sahibim', 'https://t.me/hasanli011')]
                     ),
