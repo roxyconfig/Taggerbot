@@ -110,13 +110,13 @@ async def mentionall(event):
 async def tektag(event):
   global aykhan_tag
   if event.is_private:
-    return await event.respond(f"{noqrup}")
+    return await event.respond(f"Bura qrup dəyil")
   
   admins = []
   async for admin in client.iter_participants(event.chat_id, filter=ChannelParticipantsAdmins):
     admins.append(admin.id)
   if not event.sender_id in admins:
-    return await event.respond(f"{noadmin}")
+    return await event.respond(f"sən admin döyülsən")
   
   if event.pattern_match.group(1):
     mode = "text_on_cmd"
@@ -149,7 +149,7 @@ async def tektag(event):
         await event.respond("⛔ Tək Tək Tağ Prosesi Dayandırıldı",
                     buttons=(
                       [
-                      Button.inline(f"{yeniden}", data="yeniden")
+                      Button.inline(f"yeniden", data="yeniden")
                       ]
                     )
                   )
