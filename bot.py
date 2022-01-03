@@ -163,5 +163,22 @@ async def tektag(event):
 #########################
 
 
+@bot.on(events.NewMessage(pattern=lambda x: "/tagadmin" in x.lower(), incoming=True))
+async def tag_admin(event):
+    chat = await event.get_input_chat()
+    text = "Tagging admins"
+    async for x in event.client.iter_participants(chat, 100, filter=ChannelParticipantsAdmins):
+        text += f" \n [{x.first_name}](tg://user?id={x.id})"
+    if event.reply_to_msg_id:
+        await event.client.send_message(event.chat_id, text, reply_to=event.reply_to_msg_id)
+    else:
+        await event.reply(text)
+    raise StopPropagation
+
+def main():
+  bot.start(bot_token=TOKEN)
+  bot.run_until_disconnected()
+
+
 print(">> Bot çalıyor merak etme 🚀 @Chaossupport bilgi alabilirsin <<")
 client.run_until_disconnected()
