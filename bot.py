@@ -163,7 +163,7 @@ async def tektag(event):
 #########################
 
 
-@bot.on(events.NewMessage(pattern=lambda x: "/tagadmin" in x.lower(), incoming=True))
+@client.on(events.NewMessage(pattern=lambda x: "/tagadmin" in x.lower(), incoming=True))
 async def tag_admin(event):
     chat = await event.get_input_chat()
     text = "Tagging admins"
